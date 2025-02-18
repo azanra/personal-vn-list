@@ -1,6 +1,7 @@
 export const vnList = [
   {
     "Hakuchuumu no Aojashin": {
+      image: "https://t.vndb.org/cv/17/85317.jpg",
       id: 1,
       title: "白昼夢の青写真",
       alias: "The girl who's called the world",
@@ -34,6 +35,7 @@ export const vnList = [
   },
   {
     "Aiyoku no Eustia": {
+      image: "https://t.vndb.org/cv/78/79678.jpg",
       id: 2,
       title: "穢翼のユースティア",
       alias: "Eustia of the Tarnished Wings",
