@@ -4,6 +4,12 @@ function createArrayFromObject(object, array) {
   }
 }
 
+function renderList(array) {
+  return array.map((item, index) => {
+    return <li key={index}>{item}</li>;
+  });
+}
+
 export default function Detail({ list }) {
   let arrList = [];
   const {
@@ -17,5 +23,11 @@ export default function Detail({ list }) {
     ...detailList
   } = list;
 
-  return <></>;
+  createArrayFromObject(detailList, arrList);
+  let renderArr = renderList(arrList);
+  return (
+    <>
+      <li>{renderArr}</li>
+    </>
+  );
 }
