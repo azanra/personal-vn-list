@@ -26,13 +26,13 @@ export default function Detail({ list }) {
   createArrayFromObject(detailList, arrList);
   let renderDetail = renderList(arrList);
   let renderPublisher = renderList(publisher);
-  let renderRel = renderList(relation);
+  let renderRelation = renderList(relation);
   return (
     <>
       <ul>
         {renderDetail}
         <ul>publisher :{renderPublisher}</ul>
-        <ul>relation : {renderRel}</ul>
+        <ul>{renderRelation ? `publisher : ${renderRelation}` : null}</ul>
       </ul>
     </>
   );
