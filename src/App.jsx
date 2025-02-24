@@ -4,7 +4,7 @@ import List from "./list";
 
 function App() {
   let displayList = vnList.map((item, index) => {
-    return <List key={index} props={item} />;
+    return <List key={index} list={item} />;
   });
 
   return <>{displayList}</>;

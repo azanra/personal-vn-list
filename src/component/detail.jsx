@@ -5,7 +5,7 @@ function createArrayFromObject(object, array) {
 }
 
 function renderList(array) {
-  return array.map((item, index) => {
+  return array?.map((item, index) => {
     return <li key={index}>{item}</li>;
   });
 }
@@ -24,10 +24,16 @@ export default function Detail({ list }) {
   } = list;
 
   createArrayFromObject(detailList, arrList);
-  let renderArr = renderList(arrList);
+  let renderDetail = renderList(arrList);
+  let renderPublisher = renderList(publisher);
+  let renderRel = renderList(relation);
   return (
     <>
-      <li>{renderArr}</li>
+      <ul>
+        {renderDetail}
+        <ul>publisher :{renderPublisher}</ul>
+        <ul>relation : {renderRel}</ul>
+      </ul>
     </>
   );
 }
