@@ -32,7 +32,9 @@ export default function Detail({ list }) {
       <ul>
         {renderDetail}
         <ul>publisher :{renderPublisher}</ul>
-        <ul>{renderRelation ? `publisher : ${renderRelation}` : null}</ul>
+        {renderRelation !== undefined ? (
+          <ul>relation :{renderRelation}</ul>
+        ) : null}
       </ul>
     </>
   );
