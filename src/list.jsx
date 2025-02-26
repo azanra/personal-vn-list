@@ -27,12 +27,19 @@ export default function List({ list }) {
             borderRadius: "5px",
           }}
         />
-        <div className="read-status">
-          <p>
-            Read status :{" "}
-            <button onClick={handleReadClick}>{checkIfRead()}</button>
-          </p>
-        </div>
+        <form action="">
+          <div className="read-status">
+            <p>
+              Read status :{" "}
+              <button onClick={handleReadClick}>{checkIfRead()}</button>
+            </p>
+          </div>
+          <div className="rating">
+            <label htmlFor="rating-input">Rating: </label>
+            <input type="number" id="rating-input" />
+          </div>
+          <button type="submit">Update</button>
+        </form>
       </div>
       <Detail list={list} />
     </>
