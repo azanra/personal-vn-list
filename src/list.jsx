@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import Detail from "./component/detail";
 
 export default function List({ list }) {
+  const [haveReadStatus, setHaveReadStatus] = useState("");
   const [haveRead, setHaveRead] = useState(false);
   function handleReadClick() {
+    checkIfRead();
     setHaveRead(!haveRead);
   }
   function checkIfRead() {
-    let readStatus;
-    haveRead === true ? (readStatus = "Have read") : (readStatus = "Not yet");
-    return readStatus;
+    haveRead ? setHaveReadStatus("Have read") : setHaveReadStatus("Not yet");
   }
   return (
     <>
@@ -27,12 +27,14 @@ export default function List({ list }) {
             borderRadius: "5px",
           }}
         />
-        <form action="">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
           <div className="read-status">
-            <p>
-              Read status :{" "}
-              <button onClick={handleReadClick}>{checkIfRead()}</button>
-            </p>
+            <p>Read status : {haveReadStatus}</p>
+            <button onClick={handleReadClick}>Update</button>
           </div>
           <div className="rating">
             <label htmlFor="rating-input">Rating: </label>
