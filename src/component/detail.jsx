@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function createArrayFromObject(object, array) {
   for (let key in object) {
     array.push(`${key} : ${object[key]}`);
@@ -37,3 +39,15 @@ export default function Detail({ list }) {
     </>
   );
 }
+
+Detail.propTypes = {
+  list: PropTypes.object,
+  detailList: PropTypes.object,
+  romaji: PropTypes.string,
+  image: PropTypes.string,
+  id: PropTypes.number,
+  title: PropTypes.links,
+  publisher: PropTypes.array,
+  relation: PropTypes.array,
+  links: PropTypes.array,
+};
