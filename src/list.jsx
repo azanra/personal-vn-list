@@ -5,12 +5,17 @@ import Detail from "./component/detail";
 export default function List({ list }) {
   const [haveReadStatus, setHaveReadStatus] = useState("");
   const [haveRead, setHaveRead] = useState(false);
+  const [rating, setRating] = useState(0);
+
   function handleReadClick() {
     checkIfRead();
     setHaveRead(!haveRead);
   }
   function checkIfRead() {
     haveRead ? setHaveReadStatus("Have read") : setHaveReadStatus("Not yet");
+  }
+  function handleSetRating(event) {
+    setRating(Number(event.target.value));
   }
   return (
     <>
@@ -38,7 +43,14 @@ export default function List({ list }) {
           </div>
           <div className="rating">
             <label htmlFor="rating-input">Rating: </label>
-            <input type="number" id="rating-input" />
+            <input
+              type="number"
+              id="rating-input"
+              onChange={handleSetRating}
+              value={rating}
+              min={0}
+              max={10}
+            />
           </div>
           <button type="submit">Update</button>
         </form>
