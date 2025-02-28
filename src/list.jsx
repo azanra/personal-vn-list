@@ -23,7 +23,7 @@ export default function List({ list }) {
     setReview(event.target.value);
   }
   return (
-    <div className="p-10">
+    <div className="p-10 flex">
       <div className="header">
         <div className="header-section">
           <h2 className="text-6xl">{list.title}</h2>
@@ -40,48 +40,50 @@ export default function List({ list }) {
           />
         </div>
       </div>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          alert("Update Success");
-        }}
-      >
-        <div className="read-status">
-          <label htmlFor="status-input">Read Status : </label>
-          <select
-            name="haveRead"
-            id="status-input"
-            value={haveRead}
-            onChange={handleReadClick}
-          >
-            <option value={true}>Have Read</option>
-            <option value={false}>Not Yet</option>
-          </select>
-        </div>
-        <div className="rating">
-          <label htmlFor="rating-input">Rating: </label>
-          <input
-            type="number"
-            id="rating-input"
-            name="rating"
-            onChange={handleSetRating}
-            value={rating}
-            min={0}
-            max={10}
-          />
-        </div>
-        <div className="review">
-          <label htmlFor="review-input">Review : </label>
-          <textarea
-            name="review"
-            id="review-input"
-            value={review}
-            onChange={handleSetReview}
-          ></textarea>
-        </div>
-        <button type="submit">Update</button>
-      </form>
-      <Detail list={list} />
+      <div className="main text-s w-[600px] p-5">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            alert("Update Success");
+          }}
+        >
+          <div className="read-status">
+            <label htmlFor="status-input">Read Status : </label>
+            <select
+              name="haveRead"
+              id="status-input"
+              value={haveRead}
+              onChange={handleReadClick}
+            >
+              <option value={true}>Have Read</option>
+              <option value={false}>Not Yet</option>
+            </select>
+          </div>
+          <div className="rating">
+            <label htmlFor="rating-input">Rating: </label>
+            <input
+              type="number"
+              id="rating-input"
+              name="rating"
+              onChange={handleSetRating}
+              value={rating}
+              min={0}
+              max={10}
+            />
+          </div>
+          <div className="review">
+            <label htmlFor="review-input">Review : </label>
+            <textarea
+              name="review"
+              id="review-input"
+              value={review}
+              onChange={handleSetReview}
+            ></textarea>
+          </div>
+          <button type="submit">Update</button>
+        </form>
+        <Detail list={list} />
+      </div>
     </div>
   );
 }
