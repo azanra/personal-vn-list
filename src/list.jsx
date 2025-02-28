@@ -48,7 +48,9 @@ export default function List({ list }) {
           }}
         >
           <div className="read-status mb-5 mt-20">
-            <label htmlFor="status-input">Read Status : </label>
+            <label htmlFor="status-input" className="mr-10">
+              Read Status :{" "}
+            </label>
             <select
               name="haveRead"
               id="status-input"
@@ -61,7 +63,9 @@ export default function List({ list }) {
             </select>
           </div>
           <div className="rating mb-5">
-            <label htmlFor="rating-input">Rating: </label>
+            <label htmlFor="rating-input" className="mr-20.5">
+              Rating :{" "}
+            </label>
             <input
               type="number"
               id="rating-input"
@@ -70,11 +74,13 @@ export default function List({ list }) {
               value={rating}
               min={0}
               max={10}
-              className="border-1 rounded-md p-1"
+              className="border-1 rounded-md p-2"
             />
           </div>
-          <div className="review mb-5">
-            <label htmlFor="review-input">Review : </label>
+          <div className="review mb-5 flex items-center">
+            <label htmlFor="review-input" className="mr-20.5">
+              Review :{" "}
+            </label>
             <textarea
               name="review"
               id="review-input"
@@ -83,7 +89,7 @@ export default function List({ list }) {
               className="border-1 rounded-md p-1"
             ></textarea>
           </div>
-          <button type="submit" className="border-1 rounded-md px-5 py-1 mb-5">
+          <button type="submit" className="border-1 rounded-md px-5 py-1 mb-5 ">
             Update
           </button>
         </form>
