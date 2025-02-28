@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Detail from "./component/detail";
+import "./style/style.css";
 
 const booleanObj = {
   true: true,

@@ -1,6 +1,6 @@
-import "./App.css";
 import { vnList } from "./model/data";
 import List from "./list";
+import "./style/style.css";
 
 function App() {
   let displayList = vnList.map((item, index) => {
