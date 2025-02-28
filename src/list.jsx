@@ -10,12 +10,16 @@ const booleanObj = {
 export default function List({ list }) {
   const [haveRead, setHaveRead] = useState(false);
   const [rating, setRating] = useState(0);
+  const [review, setReview] = useState("");
 
   function handleReadClick(event) {
     setHaveRead(booleanObj[event.target.value]);
   }
   function handleSetRating(event) {
     setRating(Number(event.target.value));
+  }
+  function handleSetReview(event) {
+    setReview(event.target.value);
   }
   return (
     <>
@@ -35,6 +39,7 @@ export default function List({ list }) {
         <form
           onSubmit={(event) => {
             event.preventDefault();
+            alert("Update Success");
           }}
         >
           <div className="read-status">
@@ -54,11 +59,21 @@ export default function List({ list }) {
             <input
               type="number"
               id="rating-input"
+              name="rating"
               onChange={handleSetRating}
               value={rating}
               min={0}
               max={10}
             />
+          </div>
+          <div className="review">
+            <label htmlFor="review-input">Review : </label>
+            <textarea
+              name="review"
+              id="review-input"
+              value={review}
+              onChange={handleSetReview}
+            ></textarea>
           </div>
           <button type="submit">Update</button>
         </form>
