@@ -2,17 +2,17 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Detail from "./component/detail";
 
+const booleanObj = {
+  true: true,
+  false: false,
+};
+
 export default function List({ list }) {
-  const [haveReadStatus, setHaveReadStatus] = useState("");
   const [haveRead, setHaveRead] = useState(false);
   const [rating, setRating] = useState(0);
 
-  function handleReadClick() {
-    checkIfRead();
-    setHaveRead(!haveRead);
-  }
-  function checkIfRead() {
-    haveRead ? setHaveReadStatus("Have read") : setHaveReadStatus("Not yet");
+  function handleReadClick(event) {
+    setHaveRead(booleanObj[event.target.value]);
   }
   function handleSetRating(event) {
     setRating(Number(event.target.value));
@@ -38,8 +38,16 @@ export default function List({ list }) {
           }}
         >
           <div className="read-status">
-            <p>Read status : {haveReadStatus}</p>
-            <button onClick={handleReadClick}>Update</button>
+            <label htmlFor="status-input">Read Status : </label>
+            <select
+              name="haveRead"
+              id="status-input"
+              value={haveRead}
+              onChange={handleReadClick}
+            >
+              <option value={true}>Have Read</option>
+              <option value={false}>Not Yet</option>
+            </select>
           </div>
           <div className="rating">
             <label htmlFor="rating-input">Rating: </label>
