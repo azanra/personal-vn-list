@@ -47,19 +47,20 @@ export default function List({ list }) {
             alert("Update Success");
           }}
         >
-          <div className="read-status">
+          <div className="read-status mb-5 mt-20">
             <label htmlFor="status-input">Read Status : </label>
             <select
               name="haveRead"
               id="status-input"
               value={haveRead}
               onChange={handleReadClick}
+              className="border-1 rounded-md p-1"
             >
               <option value={true}>Have Read</option>
               <option value={false}>Not Yet</option>
             </select>
           </div>
-          <div className="rating">
+          <div className="rating mb-5">
             <label htmlFor="rating-input">Rating: </label>
             <input
               type="number"
@@ -69,18 +70,22 @@ export default function List({ list }) {
               value={rating}
               min={0}
               max={10}
+              className="border-1 rounded-md p-1"
             />
           </div>
-          <div className="review">
+          <div className="review mb-5">
             <label htmlFor="review-input">Review : </label>
             <textarea
               name="review"
               id="review-input"
               value={review}
               onChange={handleSetReview}
+              className="border-1 rounded-md p-1"
             ></textarea>
           </div>
-          <button type="submit">Update</button>
+          <button type="submit" className="border-1 rounded-md px-5 py-1 mb-5">
+            Update
+          </button>
         </form>
         <Detail list={list} />
       </div>
