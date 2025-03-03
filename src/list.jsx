@@ -89,7 +89,10 @@ export default function List({ list }) {
               className="border-1 rounded-md p-1"
             ></textarea>
           </div>
-          <button type="submit" className="border-1 rounded-md px-5 py-1 mb-5 ">
+          <button
+            type="submit"
+            className=" rounded-md px-7 py-2 mb-5 bg-violet-500 hover:bg-violet-600 text-white font-bold active:bg-blue-500"
+          >
             Update
           </button>
         </form>
