@@ -8,7 +8,11 @@ function createArrayFromObject(object, array) {
 
 function renderList(array) {
   return array?.map((item, index) => {
-    return <li key={index}>{item}</li>;
+    return (
+      <li className="mb-5" key={index}>
+        {item}
+      </li>
+    );
   });
 }
 
@@ -33,8 +37,8 @@ export default function Detail({ list }) {
     <>
       <ul>
         <ul>{renderDetail} </ul>
-        <ul>publisher :{renderPublisher}</ul>
-        {renderRelation !== undefined && <ul>relation :{renderRelation}</ul>}
+        <ul>publisher {renderPublisher}</ul>
+        {renderRelation !== undefined && <ul>relation {renderRelation}</ul>}
       </ul>
     </>
   );
