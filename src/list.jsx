@@ -58,8 +58,12 @@ export default function List({ list }) {
               onChange={handleReadClick}
               className="border-1 rounded-md p-1"
             >
-              <option value={true}>Have Read</option>
-              <option value={false}>Not Yet</option>
+              <option value={true} className="text-black">
+                Have Read
+              </option>
+              <option value={false} className="text-black">
+                Not Yet
+              </option>
             </select>
           </div>
           <div className="rating mb-5">
