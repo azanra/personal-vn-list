@@ -7,7 +7,7 @@ function App() {
     return <List key={index} list={item} />;
   });
 
-  return <>{displayList}</>;
+  return <div className="bg-[#071c30] text-white">{displayList}</div>;
 }
 
 export default App;

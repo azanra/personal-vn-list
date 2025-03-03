@@ -23,7 +23,7 @@ export default function List({ list }) {
     setReview(event.target.value);
   }
   return (
-    <div className="p-10 flex">
+    <div className="p-10 flex border-1 border-[#258]">
       <div className="header">
         <div className="header-section">
           <h2 className="text-6xl">{list.title}</h2>
